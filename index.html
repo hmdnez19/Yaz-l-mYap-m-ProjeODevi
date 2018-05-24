@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Scrum Table</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript">
+
+
+    </script>
+</head>
+
+<body>
+
+    <div class="story">
+        <h3>Story</h3>
+        <input type="yazı" placeholder="Görev Girin..." id="task" />
+        <button class="button" id="add-button">Görevi Ekle</button>
+
+        <div class="scrum-board inStory">
+            <div class="boostrp flex">
+                <div class="girdi-sınıfı overflow">
+                    <span>Ödevi Yap</span>
+                    <div class="margin-top-10">
+                        <button class="button button-story">Story</button>
+                        <button class="button button-notStarted">Not Started</button>
+                        <button class="button button-inProgress">In Progress</button>
+                        <button class="button button-done">Done</button>
+                        <button class="button button-delete">Delete</button>
+                    </div>
+                </div>
+                <div class="girdi-sınıfı overflow">
+                    <span>Js Kullan</span>
+                    <div class="margin-top-10">
+                        <button class="button button-story">Story</button>
+                        <button class="button button-notStarted">Not Started</button>
+                        <button class="button button-inProgress">In Progress</button>
+                        <button class="button button-done">Done</button>
+                        <button class="button button-delete">Delete</button>
+                    </div>
+                </div>
+
+                    <div class="girdi-sınıfı overflow">
+                        <span>DB Kullan</span>
+                        <div class="margin-top-10">
+                            <button class="button button-story">Story</button>
+                            <button class="button button-notStarted">Not Started</button>
+                            <button class="button button-inProgress">In Progress</button>
+                            <button class="button button-done">Done</button>
+                            <button class="button button-delete">Delete</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+        </div>
+    </div>
+
+    <div class="notStarted">
+        <h3>Not Started</h3>
+    </div>
+    <div class="ınProgress">
+        <h3>In Progress</h3>
+    </div>
+    <div class="done">
+        <h3>Done</h3>
+    </div>
+
+    <script>
+        init();
+
+        //Button Functions------------------------------------------
+        function init() {
+            $(".button-story").on("click", function() {
+                if (!($(this).closest(".story").length > 0)) {
+                    $(this).parents(".girdi-sınıfı").appendTo(".story").css({
+                        "background-color": "",
+                        border: ""
+                    });
+                }
+            });
+            $(".button-notStarted").on("click", function() {
+                if (!($(this).closest(".notStarted").length > 0)) {
+                    $(this)
+                        .parents(".girdi-sınıfı")
+                        .appendTo(".notStarted")
+                        .css({
+                            "background-color": "",
+                            border: "none"
+                        });
+                }
+            });
+
+            $(".button-inProgress").on("click", function() {
+                if (!($(this).closest(".ınProgress").length > 0)) {
+                    $(this)
+                        .parents(".girdi-sınıfı")
+                        .appendTo(".ınProgress")
+                        .css({
+                            "background-color": "",
+                            border: "none"
+                        });
+                }
+            });
+
+
+
+            $(".button-done").on("click", function() {
+                if (!($(this).closest(".done").length > 0)) {
+                    $(this)
+                        .parents(".girdi-sınıfı")
+                        .appendTo(".done")
+                        .css({
+                            "background-color": "",
+                            border: "none"
+                        });
+                }
+            });
+            $(".button-delete").on("click", function() {
+                $(this)
+                    .parents(".girdi-sınıfı")
+                    .remove();
+            });
+
+            var placeholderDiv = document.createElement("div");
+            var placeholderAtt = document.createAttribute("class");
+            var taskDivAttVal = (placeholderAtt.value = "placeholder");
+            placeholderDiv.setAttributeNode(placeholderAtt);
+            //Create Task------------------------------------------
+            
+            
+        }
+        $("#add-button").on("click", function() {
+                
+                var taskDiv = document.createElement("div");
+                var taskSpan = document.createElement("span");
+                var buttonsDiv = document.createElement("div");
+                var buttonStory = document.createElement("button");
+                var buttonnotStarted = document.createElement("button");
+                var buttoninProgress = document.createElement("button");
+                var buttonDone = document.createElement("button");
+                var buttonDelete = document.createElement("button");
+
+                var taskDivAtt = document.createAttribute("class");
+                var buttonsDivAtt = document.createAttribute("class");
+                var buttonStoryAtt = document.createAttribute("class");
+                var buttonnotStartedAtt = document.createAttribute("class");
+                var buttoninProgressAtt = document.createAttribute("class");
+                var buttonDoneAtt = document.createAttribute("class");
+                var buttonDeleteAtt = document.createAttribute("class");
+
+                var taskDivAttVal = (taskDivAtt.value = "girdi-sınıfı overflow");
+                var buttonsDivAttVal = (buttonsDivAtt.value = "margin-top-10");
+                var buttonStoryAttVal = (buttonStoryAtt.value = "button button-story");
+                var buttonNotStartedAttVal = (buttonnotStartedAtt.value = "button button-notStarted");
+                var buttoninProgressAttVal = (buttoninProgressAtt.value = "button button-inProgress");
+                var buttonDoneAttVal = (buttonDoneAtt.value = "button button-done");
+                var buttonDeleteAttVal = (buttonDeleteAtt.value = "button button-delete");
+
+                taskDiv.setAttributeNode(taskDivAtt);
+                buttonsDiv.setAttributeNode(buttonsDivAtt);
+                buttonStory.setAttributeNode(buttonStoryAtt);
+                buttonnotStarted.setAttributeNode(buttonnotStartedAtt);
+                buttoninProgress.setAttributeNode(buttoninProgressAtt);
+                buttonDone.setAttributeNode(buttonDoneAtt);
+                buttonDelete.setAttributeNode(buttonDeleteAtt);
+
+                var taskText = document.createTextNode($("#task").val());
+                var buttonStoryText = document.createTextNode("Story");
+                var buttonnotStartedText = document.createTextNode("Not Started");
+                var buttoninProgressText = document.createTextNode("In Progress");
+                var buttonDoneText = document.createTextNode("Done");
+                var buttonDeleteText = document.createTextNode("Delete");
+
+                taskSpan.appendChild(taskText);
+                taskDiv.appendChild(taskSpan);
+                taskDiv.appendChild(buttonsDiv);
+                buttonStory.appendChild(buttonStoryText);
+                buttoninProgress.appendChild(buttoninProgressText);
+                buttonnotStarted.appendChild(buttonnotStartedText);
+                buttonDone.appendChild(buttonDoneText);
+                buttonDelete.appendChild(buttonDeleteText);
+                buttonsDiv.appendChild(buttonStory);
+                buttonsDiv.appendChild(buttonnotStarted);
+                buttonsDiv.appendChild(buttoninProgress);
+                buttonsDiv.appendChild(buttonDone);
+                buttonsDiv.appendChild(buttonDelete);
+               
+
+                $(".story").append(taskDiv);
+                
+
+                init();
+            });
+
+    </script>
+
+
+
+
+
+</body>
+
+</html>

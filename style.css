@@ -1,0 +1,167 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body,
+html {
+    height: 100%;
+    width: 100%;
+}
+
+.story {
+    padding: 0px;
+    height: 100%;
+    width: 25%;
+    background-color: #FFD944;
+    float: left;
+}
+
+.notStarted {
+    height: 100%;
+    width: 25%;
+    background-color: #94DD4D;
+    float: left;
+}
+
+.ınProgress {
+    height: 100%;
+    width: 25%;
+    background-color: #49B47E;
+    float: left;
+}
+
+.done {
+    height: 100%;
+    width: 25%;
+    background-color: #54447B;
+    float: left;
+}
+
+.story h3 {
+    font-size: 40px;
+    text-align: center;
+    font-family: 'Indie Flower', cursive;
+    color: dimgrey;
+}
+
+.notStarted h3 {
+    font-size: 40px;
+    text-align: center;
+    font-family: 'Indie Flower', cursive;
+    color: dimgrey;
+
+
+}
+
+.ınProgress h3 {
+    font-size: 40px;
+    text-align: center;
+    font-family: 'Indie Flower', cursive;
+    color: dimgrey;
+
+
+}
+
+.done h3 {
+    font-size: 40px;
+    text-align: center;
+    font-family: 'Indie Flower', cursive;
+    color: dimgrey;
+
+
+}
+
+.add_task h3{
+    font-size: 40px;
+    text-align: center;
+    font-family: 'Indie Flower', cursive;
+    color: dimgrey;
+}
+.story input[type="yazı"]{
+  padding: 10px;
+  background-color:antiquewhite;
+  box-shadow: 1px;
+  border: none;
+}
+.button{
+  display: inline-block;
+  padding: 10px;
+  background-color:cadetblue;
+  border: none;
+  border-radius: 7px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 12px;
+  box-shadow: none;
+  margin-right: 7px;
+}
+.button-story{
+  box-shadow: none;
+  color: azure;
+  font-weight: italic;
+}
+.button-notStarted{
+  box-shadow: none;
+  color: azure;
+  font-weight: italic;
+}
+.button-inProgress{
+  box-shadow: none;
+  color: azure;
+  font-weight: italic;
+}
+.button-done{
+  box-shadow: none;
+  color: azure;
+  font-weight: italic;
+}
+.button-delete{
+  box-shadow: none;
+  color: azure;
+  font-weight: italic;
+}
+.col-4rds{
+  box-sizing: border-box;
+  width:25%;
+  float:left;
+}
+.boostrp flex{
+  display: flex;
+  flex-direction: row;
+}
+.scrum-board{
+  flex: 1;
+  padding:5px;   
+}
+.scrum-board:first-child{
+  flex: 1;
+  padding:5px;
+}
+.girdi-sınıfı{
+  position: relative;
+  display: block;
+  padding: 5px;
+  margin-bottom: 10px;
+  background-color:azure;
+}
+.girdi-sınıfı span{
+  color:black;
+  font-weight: bold;
+}
+.float-right{
+  float: right;
+}
+.margin-top-10{
+  margin-top: 10px;
+}
+.inStory{
+    overflow: auto;
+}
+.placeholder {
+  display: block;
+  background-color: #fff;
+  border: 5px dashed ;
+  min-height: 100px;
+  margin-bottom: 10px;
+}
